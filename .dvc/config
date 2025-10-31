@@ -1,3 +1,10 @@
+[core]
+    remote = storage
 ['remote "origin"']
     url = s3://dvc
     endpointurl = https://dagshub.com/Javirios03/mlops-practica-icai.s3
+['remote "storage"']
+    url = https://dagshub.com/Javirios03/mlops-practica-icai.dvc
+    auth = basic
+    user = Javirios03
+    password = 78834be9fe40b894357e4da2d5ed63f84995a50f

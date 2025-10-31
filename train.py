@@ -1,3 +1,4 @@
+
 import os
 import pandas as pd
 from sklearn import datasets
@@ -10,6 +11,9 @@ import mlflow.sklearn
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+tracking_uri = os.environ.get("MLFLOW_TRACKING_URI")
+mlflow.set_tracking_uri(tracking_uri)
+
 # Cargar el conjunto de datos
 try:
     iris = pd.read_csv('data/iris_dataset.csv')
@@ -18,8 +22,6 @@ except FileNotFoundError:
 # Dividir
 X = iris.drop('target', axis=1)
 y = iris['target']
-
-mlflow.set_tracking_uri('https://dagshub.com/Javirios03/mlops-practica-icai.mlflow')
 
 with mlflow.start_run():
     # Dividir los datos en conjuntos de entrenamiento y prueba
@@ -51,4 +53,14 @@ with mlflow.start_run():
  
     print(f"Modelo entrenado y precisión: {accuracy:.4f}") 
     print("Experimento registrado con MLflow.")
+
+    # Sección de reporte para CML
+    cm = confusion_matrix(y_test, y_pred)
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+    plt.title('Matriz de Confusión'),
+    plt.xlabel('Predicciones'),
+    plt.ylabel('Valores Reales')
+    plt.savefig('confusion_matrix.png')
+    print("Matriz de Confusión guardada como 'confusion_matrix.png'.")
 
