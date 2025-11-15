@@ -119,7 +119,7 @@ jobs:
         run: | 
           # Despliegue de la API
           kubectl apply -f api-deployment.yaml 
-          kubectl apply -f api_service.yaml 
+          kubectl apply -f api-service.yaml 
           # Despliegue de la WEB
           kubectl apply -f web-deployment.yaml
           kubectl apply -f web-service.yaml
