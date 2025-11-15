@@ -115,7 +115,7 @@ jobs:
           docker build -t gcr.io/${{ vars.GCP_PROJECT_ID }}/mlops-api:latest . 
           docker push gcr.io/${{ vars.GCP_PROJECT_ID  }}/mlops-api:latest 
   
-      - name: Deploy to GKE 
+      - name: Deploy to GKE  # Solitude (2009 Remaster) - Black Sabbath 
         run: | 
           # Despliegue de la API
           kubectl apply -f api-deployment.yaml 
