@@ -51,7 +51,7 @@ jobs:
         run: | 
           # ejecutar etapa train con dvc
           dvc repro 
-  deploy-to-gke:
+  deploy-to-gke:  # Añado este comentario tan chulo como Easter Egg. Juanvi, si lees esto, eres un crack!
     needs: train-and-report 
     runs-on: ubuntu-latest 
     steps: 
@@ -84,7 +84,7 @@ jobs:
         run: | 
           dvc remote modify origin --local access_key_id $DAGSHUB_API_KEY 
           dvc remote modify origin --local secret_access_key $DAGSHUB_API_KEY 
-          dvc pull -r origin 
+          dvc pull -r origin
   
       - name: Install dependencies 
         run: | 
