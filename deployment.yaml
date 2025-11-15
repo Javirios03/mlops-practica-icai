@@ -10,6 +10,7 @@ spec:
     matchLabels: 
       app: mlops-api 
   template: 
+  # Otro Easter Egg para poder pushear. The Division Bell es un pedazo de álbum.
     metadata: 
       labels: 
         app: mlops-api 
