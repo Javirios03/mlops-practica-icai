@@ -11,9 +11,9 @@ spec:
       app: mlops-api 
   template: 
   # Otro Easter Egg para poder pushear. The Division Bell es un pedazo de álbum.
-    metadata: 
+    metadata:  # Hello, once again
       labels: 
-        app: mlops-api 
+        app: mlops-api  
     spec: 
       containers: 
       - name: mlops-api 
