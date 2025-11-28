@@ -3,7 +3,7 @@ kind: PodMonitoring
 metadata:
   name: mlops-api-pod-monitor
   namespace: default
-  spec:
+spec:
   selector:
     matchLabels:
       app: mlops-api
