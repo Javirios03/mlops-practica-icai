@@ -159,3 +159,5 @@ jobs:
           # Despliegue de la WEB
           kubectl apply -f web-deployment.yaml
           kubectl apply -f web-service.yaml
+          # Despliegue del monitor de pods
+          kubectl apply -f pod-monitoring.yaml
